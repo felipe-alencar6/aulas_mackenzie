@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<h3>Aplicando Conhecimento 7</h3>
+<script>
+  //Os Arrays são as variáveis modalidade, time e jogadores
+  //Transformei cada componente do Array em uma variável diferente para usar no resto do código com mais facilidade
+  var modalidade, time, jogadores, cor;
+  var m1,m2,m3,t1,t2,t3,j1,j2,j3,c1,c2,c3;
+  alert("Por favor clique nos botões para inserir seus dados");
+  function numModalidade(){
+    do{
+      m1 = prompt("Qual é a modalidade do primeiro time?")
+      m2 = prompt("Qual é a modalidade do segundo time?")
+      m3 = prompt("Qual é a modalidade do terceiro time?")
+      modalidade = [m1 ,m2 ,m3];
+      if (!m1 || !m2 || !m3) { alert("Nenhum campo pode ficar vazio");
+      }
+    }while(!m1 || !m2 || !m3)
+}
+  function numTimes(){
+    if (!m1 || !m2 || !m3) {
+      alert("Insira suas modalidades antes")
+    }
+    else {
+      do{
+        t1 = prompt("Digite o time de "+ m1)
+        t2 = prompt("Digite o time de "+ m2)
+        t3 = prompt("Digite o time de "+m3)
+        time = [t1,t2,t3];
+        if (!t1 || !t2 || !t3) { alert("Nenhum campo pode ficar vazio");
+        }
+      }while(!t1 || !t2 || !t3)
+    }
+
+}
+function numJogadores(){
+  if (!t1 || !t2 || !t3) {
+      alert("Insira seus times antes")
+  }
+  else {
+    do{
+      j1 = prompt("Qual o número de jogadores de "+m1)
+      j2 = prompt("Qual o número de jogadores de "+m2)
+      j3 = prompt("Qual o número de jogadores de "+m3)
+      jogadores = [j1 ,j2,j3];
+      if (!j1 || !j2 || !j3) { alert("Nenhum campo pode ficar vazio");
+      }
+    }while(!j1 || !j2 || !j3)
+  }
+}
+
+  function myModalidades() {
+    if (!m1 || !m3 || !m2) {
+      alert("Insira suas modalidades antes")
+  }
+  else {
+    document.getElementById("demo1").innerHTML = "<table><thead><th>Modalidades</th></thead><tr>"+"<td>"+m1+"<td>"+m2+"<td>"+m3+"</tr></table>";
+  }
+
+  }
+  function myTimes() {
+    if (!t1 || !t3 || !t2) {
+      alert("Insira seus times antes")
+  }
+  else {
+    document.getElementById("demo2").innerHTML = "<table><thead><th>Times</th></thead><tr>"+"<td>"+t1+"<td>"+t2+"<td>"+t3+"</tr></table>";
+  }
+  }
+
+  function myJogadores() {
+    if (!j1 || !j3 || !j2){
+      alert("Insira o numero de jogadores antes")
+    }
+    else{
+      document.getElementById("demo3").innerHTML = "<table><thead><th>Numero de jogadores</th></thead><tr>"+"<td>"+j1+"<td>"+j2+"<td>"+j3+"</tr></table>";
+    }
+  }
+
+  function mudarCor(novaCor) {
+    var elemento = document.getElementById("para1");
+    elemento.style.background = novaCor;
+
+    switch (novaCor) {
+      case c1:
+          document.getElementById("bras1").innerHTML = '<img src="chelsea.png">'
+        break;
+      case c2:
+          document.getElementById("bras1").innerHTML = '<img src="united.jpg">'
+        break;
+      default:
+          document.getElementById("bras1").innerHTML = '<img src="boston.jpg">'
+    }
+  }
+
+c1='DeepSkyBlue';
+c2='Red';
+c3='LightGreen';
+</script>
+
+<button onclick="numModalidade()">Insira as modalidades de esporte</button>
+<button onclick="numTimes()">Inserir seus times</button>
+<button onclick="numJogadores()">Insira o número de jogadores</button>
+<br><br><button onclick="myModalidades()">Clique para ver suas modalidades</button>
+<button onclick="myTimes()">Clique para ver seus times</button>
+<button onclick="myJogadores()">Clique para ver numero de jogadores</button><br>
+
+<br>
+<table id="para1"><thead>Arrays aparecerão aqui</thead>
+  <tr id="demo1"></tr>
+  <tr id="demo2"></tr>
+  <tr id="demo3"></tr>
+</table>
+<br>
+
+<br>Sera esse algum do seus times?<br><br>
+
+<button class =button1 onclick="mudarCor('DeepSkyBlue');">Azul</button>
+<button class =button2 onclick="mudarCor('Red');">Vermelho</button>
+<button class =button3 onclick="mudarCor('LightGreen');">Verde</button>
+<br>
+<br>
+
+<div id="bras1"></div>
+
+
+<style>
+button {}
+.button3 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;  }
+    .button2 {
+        background-color: #f44336;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;  }
+        .button1 {
+            background-color: #008CBA;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;  }
+button {
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: Cadetblue;
+  color: white;
+}
+table {border:solid 1px #000; padding:5px;}
+td {border: ridge 1px; padding: 4px;}
+img {max-width: 10em}
+
+</style>
+</body></html>
